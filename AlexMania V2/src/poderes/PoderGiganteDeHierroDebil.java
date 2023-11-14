@@ -4,7 +4,7 @@ import game.Escenario;
 import game.Poderes;
 import random.MiRandom;
 
-public class PoderGiganteDeHierroDebil extends Poderes implements CalcularDuracion {
+public class PoderGiganteDeHierroDebil extends Poderes implements CalcularDuracionPoder {
 
 	public static int DAMAGE = 70;
 	private MiRandom myRandom;

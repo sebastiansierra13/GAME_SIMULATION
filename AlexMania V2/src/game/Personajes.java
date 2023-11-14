@@ -17,6 +17,8 @@ import poderes.PoderUndead;
 import java.util.Random;
 
 import enemigos.*;
+import random.MiRandom;
+
 
 /**
  * Clase de la que heredan todos los personajes, tanto el jugador, aliados y enemigos
@@ -27,9 +29,11 @@ public abstract class Personajes extends Animado {
 
 	protected int vitalidad;
 	protected static final double FRECUENCIA_ATAQUE = 0.01;
+	private MiRandom myRandom;
 
 	public Personajes(Escenario escenario) {
 		super(escenario);
+		myRandom = new MiRandom(System.currentTimeMillis());
 	}
 
 	/**
@@ -53,22 +57,22 @@ public abstract class Personajes extends Animado {
 	}
 
 
-protected void conMovimiento() {
-    setCoordenadaY(getCoordenadaY() + getVelocidadY());
-    if (getCoordenadaY() < 0 || getCoordenadaY() > Escenario.ALTO_JUGABLE - getAlto()) {
-        setVelocidadY(-getVelocidadY());
-    }
-    setCoordenadaX(getCoordenadaX() + getVelocidadX());
-    if (getCoordenadaX() < 0 || getCoordenadaX() > Escenario.ANCHO - getAncho()) {
-        setVelocidadX(-getVelocidadX());
-    }
-    Random random = new Random();
-    int probabilidadCambioDireccion = 5; 
-    if (random.nextInt(100) < probabilidadCambioDireccion) {
-        setVelocidadX(random.nextInt(5) - 2); 
-        setVelocidadY(random.nextInt(5) - 2); 
-    }
-}
+	protected void conMovimiento() {
+		setCoordenadaY(getCoordenadaY() + getVelocidadY());
+		if (getCoordenadaY() < 0 || getCoordenadaY() > Escenario.ALTO_JUGABLE - getAlto()) {
+			setVelocidadY(-getVelocidadY());
+		}
+		setCoordenadaX(getCoordenadaX() + getVelocidadX());
+		if (getCoordenadaX() < 0 || getCoordenadaX() > Escenario.ANCHO - getAncho()) {
+			setVelocidadX(-getVelocidadX());
+		}
+		Random random = new Random();
+		int probabilidadCambioDireccion = 5;
+		if (random.nextInt(100) < probabilidadCambioDireccion) {
+			setVelocidadX(random.nextInt(5) - 2);
+			setVelocidadY(random.nextInt(5) - 2);
+		}
+	}
 
 	
 

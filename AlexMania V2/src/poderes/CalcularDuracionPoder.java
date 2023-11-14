@@ -1,6 +1,5 @@
 package poderes;
 
-public interface CalcularDuracion {
+public interface CalcularDuracionPoder {
         int calcularDuracion();
-
 }

@@ -34,6 +34,7 @@ import random.MiRandom;
 public class Juego extends Canvas implements Escenario, KeyListener {
 
 	private static final long serialVersionUID = 7534850285592863856L;
+	private static final double PROBABILIDAD_CREACION =0.6;
 	private MiRandom myRandom;
 	private BufferStrategy strategy;
 
@@ -264,24 +265,30 @@ public class Juego extends Canvas implements Escenario, KeyListener {
 	/**
 	 * Agrega un enemigo al azar
 	 */
+	//METODO MONTECARLO
+
+	/*En el método agregarEnemigo(), se aplicó el método Montecarlo para
+	introducir variabilidad en la generación de enemigos. Se utilizó una
+	probabilidad predefinida para decidir si se crea un Undead o un Demonio,
+	simulando así un evento incierto. Al emplear números aleatorios proporcionados
+	por la función nextDouble() de la clase Random, se logra una predicción
+	probabilística de los resultados posibles, cumpliendo con la esencia de
+	las simulaciones de Montecarlo. Este enfoque permite ajustar la frecuencia
+	de aparición de cada tipo de enemigo, otorgando dinamismo y diversidad
+	al juego de acuerdo con la probabilidad establecida.*/
 	public void agregarEnemigo() {
-		int opcion = (int) (myRandom.nextDouble() * 2 + 1);
-		if (opcion == 1) {
+		double probabilidadUndead = PROBABILIDAD_CREACION; // Probabilidad de que aparezca un Undead
+		if (myRandom.nextDouble() < probabilidadUndead) {
 			Undead enemigo = new Undead(this);
-			enemigo.setCoordenadaX((int) (myRandom.nextDouble()
-					* ((Escenario.ANCHO - 50) - (Escenario.ANCHO / 2) + 1) + (Escenario.ANCHO / 2)));
-			enemigo.setCoordenadaY((int) (myRandom.nextDouble()
-					* ((Escenario.ALTO_JUGABLE - enemigo.getAlto()) - (0) + 1) + 0));
+			enemigo.setCoordenadaX((int) (myRandom.nextDouble() * ((Escenario.ANCHO - 50) - (Escenario.ANCHO / 2) + 1) + (Escenario.ANCHO / 2)));
+			enemigo.setCoordenadaY((int) (myRandom.nextDouble() * ((Escenario.ALTO_JUGABLE - enemigo.getAlto()) - (0) + 1) + 0));
 			enemigo.setVelocidadY((int) (myRandom.nextDouble() * (2 - 6) - 1));
 			animados.add(enemigo);
 			contadorEnemigos++;
-
-		} else if (opcion == 2) {
+		} else {
 			Demonio enemigo = new Demonio(this);
-			enemigo.setCoordenadaX((int) (myRandom.nextDouble()
-					* ((Escenario.ANCHO - 50) - (Escenario.ANCHO / 2) + 1) + (Escenario.ANCHO / 2)));
-			enemigo.setCoordenadaY((int) (myRandom.nextDouble()
-					* ((Escenario.ALTO_JUGABLE - enemigo.getAlto()) - (0) + 1) + 0));
+			enemigo.setCoordenadaX((int) (myRandom.nextDouble() * ((Escenario.ANCHO - 50) - (Escenario.ANCHO / 2) + 1) + (Escenario.ANCHO / 2)));
+			enemigo.setCoordenadaY((int) (myRandom.nextDouble() * ((Escenario.ALTO_JUGABLE - enemigo.getAlto()) - (0) + 1) + 0));
 			enemigo.setVelocidadY((int) (myRandom.nextDouble() * (2 - 6) - 1));
 			animados.add(enemigo);
 			contadorEnemigos++;
