@@ -1,0 +1,44 @@
+package poderes;
+
+import game.Escenario;
+import game.Poderes;
+import random.MiRandom;
+
+public class PoderSucuboDebil extends Poderes implements CalcularDuracion{
+
+	public static int DAMAGE = 20;
+	private MiRandom myRandom;
+	private double probabilidadDuracion = 0.7; // Probabilidad de duración, ajusta según necesites
+
+	public PoderSucuboDebil(Escenario escenario) {
+		super(escenario);
+		myRandom = new MiRandom(System.currentTimeMillis());
+		setDuracion(calcularDuracion()); // Establecer la duración del poder
+		setSpritesNombres(new String[]{"poderes/poderPiccoloDebil.png"});
+		setVelocidadPoder(6);
+	}
+
+	@Override
+	public void accion() {
+		super.accion();
+		poderEnemigo();
+	}
+
+	@Override
+	public int calcularDuracion() {
+		// Implementación del método Montecarlo para calcular la duración
+		int duracionMinima = 1;
+		int duracionMaxima = 4;
+		int duracion = 0;
+
+		for (int i = 0; i < duracionMaxima; i++) {
+			if (myRandom.nextDouble() < probabilidadDuracion) {
+				duracion = i + duracionMinima;
+				break;
+			}
+		}
+
+		return duracion;
+	}
+
+}
