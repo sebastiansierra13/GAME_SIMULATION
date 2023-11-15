@@ -16,6 +16,8 @@ import java.awt.event.KeyListener;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -30,6 +32,7 @@ import poderes.PoderDemonioMDebil;
 import poderes.PoderGiganteDeHierroDebil;
 import poderes.PoderSucuboFuerte;
 import random.MiRandom;
+
 
 public class Juego extends Canvas implements Escenario, KeyListener {
 
@@ -67,6 +70,10 @@ public class Juego extends Canvas implements Escenario, KeyListener {
 
 	private JFrame ventanaPrincipal;
 	private JPanel panel;
+
+	//Se crea cola de capsulas
+	private Queue<Capsula> colaCapsulas = new LinkedList<>();
+	
 
 	public Juego() {
 		myRandom = new MiRandom(System.currentTimeMillis());
@@ -234,6 +241,11 @@ public class Juego extends Canvas implements Escenario, KeyListener {
 		agregarItems();
 	}
 
+
+	private boolean hayCapsulaVisible() {
+		return false;
+	}
+
 	/**
 	 * Agrega un item al azar
 	 */
@@ -242,12 +254,20 @@ public class Juego extends Canvas implements Escenario, KeyListener {
 		if (oportunidad == 23) {
 			oportunidad =  (myRandom.nextIntInRange(1,2));
 			if (oportunidad == 1) {
-				Capsula capsula = new Capsula(this);
-				capsula.setCoordenadaX((int) (myRandom.nextDouble()
+					Capsula capsula = new Capsula(this);
+				
+					colaCapsulas.add(capsula);
+
+				while (!colaCapsulas.isEmpty() && jugador.getTomarCapsula() == false) {
+					jugador.setTomarCapsula(true);
+					colaCapsulas.poll();
+					capsula.setCoordenadaX((int) (myRandom.nextDouble()
 						* ((Escenario.ANCHO - 50) - (Escenario.ANCHO / 2) + 1) + (Escenario.ANCHO / 2)));
-				capsula.setCoordenadaY((int) (myRandom.nextDouble()
+					capsula.setCoordenadaY((int) (myRandom.nextDouble()
 						* ((Escenario.ALTO_JUGABLE - capsula.getAlto()) - (0) + 1) + 0));
-				animados.add(capsula);
+					animados.add(capsula);
+				}
+			}
 
 			} else if (oportunidad == 2) {
 				Comidas comida = new Comidas(this);
@@ -259,7 +279,7 @@ public class Juego extends Canvas implements Escenario, KeyListener {
 
 			}
 		}
-	}
+	
 
 	/**
 	 * Agrega un enemigo al azar

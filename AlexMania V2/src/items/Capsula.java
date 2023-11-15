@@ -1,5 +1,7 @@
 package items;
 
+import java.util.LinkedList;
+
 import game.Escenario;
 import game.Objetos;
 import random.MiRandom;
@@ -10,6 +12,9 @@ public class Capsula extends Objetos {
 	public static boolean AYUDANTE_UNO = false;
 	public static boolean AYUDANTE_DOS = false;
 	private MiRandom myRandom;
+
+	
+
 	public Capsula(Escenario escenario) {
 		super(escenario);
 		myRandom = new MiRandom(System.currentTimeMillis());

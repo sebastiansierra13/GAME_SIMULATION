@@ -24,7 +24,6 @@ public class Demonio extends Personajes {
 	@Override
 	public void accion() {
 		super.accion();
-
 		conMovimiento();
 
 		if (myRandom.nextDouble() < FRECUENCIA_ATAQUE) {
