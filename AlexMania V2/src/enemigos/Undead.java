@@ -40,8 +40,10 @@ public class Undead extends Personajes {
 			addVitalidad(-PoderAlexFuerte.DAMAGE);
 		}
 
-		if (getVitalidad() <= 0)
+		if (getVitalidad() <= 0) {
 			remover();
+			escenario.getJugador().addPuntuacion(20);
+		}
 	}
 
 	// ********************************
