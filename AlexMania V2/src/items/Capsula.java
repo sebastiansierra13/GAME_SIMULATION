@@ -37,17 +37,14 @@ public class Capsula extends Objetos {
 		switch (estadoMarkov) {
 		case "He":
 			BOLA_DE_PODER = true;
-			System.out.println("he");
 			break;
 
 		case "Ia":
 			AYUDANTE_UNO = true;
-			System.out.println("Ia");
 			break;
 
 		case "Ir":
 			AYUDANTE_DOS = true;
-			System.out.println("Ir");
 			break;
 
 		}
