@@ -321,7 +321,7 @@ public class Juego extends Canvas implements Escenario, KeyListener {
 		g.fillRect(0, Escenario.ALTO_JUGABLE, Escenario.ANCHO, 3);
 
 		g.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		g.setPaint(Color.black);
+		g.setPaint(Color.white);
 		g.drawString("Vida:", 10, Escenario.ALTO_JUGABLE + 30);
 
 		g.setPaint(Color.red);
@@ -334,7 +334,7 @@ public class Juego extends Canvas implements Escenario, KeyListener {
 		g.fillRect(350, Escenario.ALTO_JUGABLE + 10, 2, 30);
 
 		g.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		g.setPaint(Color.black);
+		g.setPaint(Color.white);
 		g.drawString("Puntos:", 360, Escenario.ALTO_JUGABLE + 30);
 
 		g.setPaint(Color.yellow);

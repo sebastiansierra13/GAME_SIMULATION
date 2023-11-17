@@ -154,7 +154,6 @@ public class Alex extends Personajes {
 
 			else if (Capsula.AYUDANTE_DOS)
 				addAYUDANTE_DOS(1);
-
 		}
 		if (animado instanceof Comidas) {
 			animado.remover();
