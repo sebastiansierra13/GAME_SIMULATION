@@ -15,7 +15,7 @@ public class PoderSucuboDebil extends Poderes implements CalcularDuracion{
 		myRandom = new MiRandom(System.currentTimeMillis());
 		aplicarVariabilidadEnVelocidad();
 		setDuracion(calcularDuracion()); // Establecer la duración del poder
-		setSpritesNombres(new String[]{"poderes/poderPiccoloDebil.png"});
+		setSpritesNombres(new String[]{"poderes/poderSuccuboDebil.png"});
 		setVelocidadPoder(6);
 	}
 
