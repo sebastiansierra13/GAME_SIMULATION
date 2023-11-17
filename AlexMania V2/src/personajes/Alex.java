@@ -144,7 +144,7 @@ public class Alex extends Personajes {
 		if (animado instanceof Capsula) {
 			animado.remover();
 			tomarCapsula = false;
-			System.out.println("CAPSULAAAAAAA");
+			System.out.println("CAPSULAAAAA");
 			escenario.getSonidoCache().playSonido("audio/toque.wav");
 			if (Capsula.BOLA_DE_PODER)
  				addBOLA_DE_PODER(1);
