@@ -4,7 +4,7 @@ import game.Animado;
 import game.Escenario;
 import game.Personajes;
 import poderes.PoderAlexFuerte;
-import poderes.PoderGiganteDeHierroDebil;
+import poderes.GiganteDeHierroDebil;
 import random.MiRandom;
 
 public class GigantedeHierro extends Personajes {
@@ -50,7 +50,7 @@ public class GigantedeHierro extends Personajes {
 
 	@Override
 	public void poderDebil() {
-		PoderGiganteDeHierroDebil poder = new PoderGiganteDeHierroDebil(escenario);
+		GiganteDeHierroDebil poder = new GiganteDeHierroDebil(escenario);
 		poder.setCoordenadaX(coordenadaX);
 		poder.setCoordenadaY(coordenadaY + (getAlto() / 2));
 		escenario.addAnimado(poder);

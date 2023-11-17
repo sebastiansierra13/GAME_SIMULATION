@@ -4,17 +4,18 @@ import game.Escenario;
 import game.Poderes;
 import random.MiRandom;
 
-public class PoderDemonioMFuerte extends Poderes implements CalcularDuracionPoder {
+public class GiganteDeHierroDebil extends Poderes implements CalcularDuracion {
 
-	public static int DAMAGE = 200;
+	public static int DAMAGE = 70;
 	private MiRandom myRandom;
-	private static double probabilidadDuracion = 0.6; // Probabilidad de duración
+	private double probabilidadDuracion = 0.7; // Probabilidad de duración, ajusta según necesites
 
-	public PoderDemonioMFuerte(Escenario escenario) {
+	public GiganteDeHierroDebil(Escenario escenario) {
 		super(escenario);
 		myRandom = new MiRandom(System.currentTimeMillis());
-		setSpritesNombres(new String[]{"poderes/poderDemonioMFuerte0.png"});
-		setVelocidadPoder(4);
+		setDuracion(calcularDuracion()); // Establecer la duración del poder
+		setSpritesNombres(new String[]{"poderes/poderGiganteDeHierro.png"});
+		setVelocidadPoder(8);
 	}
 
 	@Override
@@ -25,8 +26,8 @@ public class PoderDemonioMFuerte extends Poderes implements CalcularDuracionPode
 
 	public int calcularDuracion() {
 		// Implementación del método Montecarlo para calcular la duración
-		int duracionMinima = 1;
-		int duracionMaxima = 5;
+		int duracionMinima = 2;
+		int duracionMaxima = 6;
 		int duracion = 0;
 
 		for (int i = 0; i < duracionMaxima; i++) {
@@ -40,4 +41,3 @@ public class PoderDemonioMFuerte extends Poderes implements CalcularDuracionPode
 	}
 
 }
-

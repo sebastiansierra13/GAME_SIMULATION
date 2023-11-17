@@ -4,8 +4,8 @@ import game.Animado;
 import game.Escenario;
 import game.Personajes;
 import poderes.PoderAlexFuerte;
-import poderes.PoderSucuboDebil;
-import poderes.PoderSucuboFuerte;
+import poderes.SucuboDebil;
+import poderes.SucuboFuerte;
 import random.MiRandom;
 
 public class Sucubo extends Personajes {
@@ -61,7 +61,7 @@ public class Sucubo extends Personajes {
 
 	@Override
 	public void poderDebil() {
-		PoderSucuboDebil poderDebil = new PoderSucuboDebil(escenario);
+		SucuboDebil poderDebil = new SucuboDebil(escenario);
 		poderDebil.setCoordenadaX(coordenadaX);
 		poderDebil.setCoordenadaY(coordenadaY);
 		escenario.addAnimado(poderDebil);
@@ -69,7 +69,7 @@ public class Sucubo extends Personajes {
 
 	@Override
 	public void poderFuerte() {
-		PoderSucuboFuerte poderFuerte = new PoderSucuboFuerte(escenario);
+		SucuboFuerte poderFuerte = new SucuboFuerte(escenario);
 		poderFuerte.setCoordenadaX(coordenadaX);
 		poderFuerte.setCoordenadaY(coordenadaY);
 		escenario.addAnimado(poderFuerte);

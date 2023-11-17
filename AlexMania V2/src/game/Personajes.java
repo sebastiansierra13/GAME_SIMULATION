@@ -4,14 +4,14 @@ import personajes.Robot;
 import personajes.Alex;
 import personajes.AlexGod;
 import poderes.PoderDemonioDebil;
-import poderes.PoderDemonioMDebil;
-import poderes.PoderDemonioMFuerte;
+import poderes.DemonioMDebil;
+import poderes.DemonioMFuerte;
 import poderes.PoderRobot;
 import poderes.PoderAlexDebil;
 import poderes.PoderAlexGod;
-import poderes.PoderGiganteDeHierroDebil;
-import poderes.PoderSucuboDebil;
-import poderes.PoderSucuboFuerte;
+import poderes.GiganteDeHierroDebil;
+import poderes.SucuboDebil;
+import poderes.SucuboFuerte;
 import poderes.PoderUndead;
 
 import java.util.Random;
@@ -117,13 +117,13 @@ public abstract class Personajes extends Animado {
 			animado.remover();
 			addVitalidad(-PoderDemonioDebil.DAMAGE);
 
-		} else if (animado instanceof PoderSucuboDebil) {
+		} else if (animado instanceof SucuboDebil) {
 			animado.remover();
-			addVitalidad(-PoderSucuboDebil.DAMAGE);
+			addVitalidad(-SucuboDebil.DAMAGE);
 
-		} else if (animado instanceof PoderSucuboFuerte) {
+		} else if (animado instanceof SucuboFuerte) {
 			animado.remover();
-			addVitalidad(-PoderSucuboFuerte.DAMAGE);
+			addVitalidad(-SucuboFuerte.DAMAGE);
 
 		} else if (animado instanceof Demonio) {
 			addVitalidad(-Demonio.DAMAGE);
@@ -141,17 +141,17 @@ public abstract class Personajes extends Animado {
 		} else if (animado instanceof GigantedeHierro){
 			addVitalidad(-GigantedeHierro.DAMAGE);
 			
-		}else if (animado instanceof PoderGiganteDeHierroDebil) {
+		}else if (animado instanceof GiganteDeHierroDebil) {
 			animado.remover();
-			addVitalidad(-PoderGiganteDeHierroDebil.DAMAGE);
+			addVitalidad(-GiganteDeHierroDebil.DAMAGE);
 
-		} else if (animado instanceof PoderDemonioMDebil) {
+		} else if (animado instanceof DemonioMDebil) {
 			animado.remover();
-			addVitalidad(-PoderDemonioMDebil.DAMAGE);
+			addVitalidad(-DemonioMDebil.DAMAGE);
 
-		} else if (animado instanceof PoderDemonioMFuerte) {
+		} else if (animado instanceof DemonioMFuerte) {
 			animado.remover();
-			addVitalidad(-PoderDemonioMFuerte.DAMAGE);
+			addVitalidad(-DemonioMFuerte.DAMAGE);
 
 		}
 

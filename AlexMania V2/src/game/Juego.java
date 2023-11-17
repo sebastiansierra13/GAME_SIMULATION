@@ -26,15 +26,15 @@ import enemigos.DemonioM;
 import enemigos.GigantedeHierro;
 import enemigos.Sucubo;
 import enemigos.Undead;
-import poderes.PoderDemonioMDebil;
-import poderes.PoderGiganteDeHierroDebil;
-import poderes.PoderSucuboFuerte;
+import poderes.DemonioMDebil;
+import poderes.GiganteDeHierroDebil;
+import poderes.SucuboFuerte;
 import random.MiRandom;
 
 public class Juego extends Canvas implements Escenario, KeyListener {
 
 	private static final long serialVersionUID = 7534850285592863856L;
-	private static final double PROBABILIDAD_CREACION =0.6;
+	private static final double PROBABILIDAD_CREACION = 0.6;
 	private MiRandom myRandom;
 	private BufferStrategy strategy;
 
@@ -506,7 +506,7 @@ public class Juego extends Canvas implements Escenario, KeyListener {
 	public void llamarJefBossSucubo() {
 		Sucubo BossSucubo = new Sucubo(this);
 		// Crear instancia del poder con duración aleatoria
-		PoderSucuboFuerte poderSucuboFuerte = new PoderSucuboFuerte(this);
+		SucuboFuerte poderSucuboFuerte = new SucuboFuerte(this);
 
 		// Agregar el poder al jefe
 		BossSucubo.setPoder(poderSucuboFuerte);
@@ -522,7 +522,7 @@ public class Juego extends Canvas implements Escenario, KeyListener {
 	public void llamarJefeGiganteDeHierro() {
 		GigantedeHierro BossGiganteDeHierro = new GigantedeHierro(this);
 		// Crear instancia del poder con duración aleatoria
-		PoderGiganteDeHierroDebil poderGiganteDeHierroDebil = new PoderGiganteDeHierroDebil(this);
+		GiganteDeHierroDebil poderGiganteDeHierroDebil = new GiganteDeHierroDebil(this);
 
 		// Agregar el poder al jefe
 		BossGiganteDeHierro.setPoder(poderGiganteDeHierroDebil);
@@ -537,7 +537,7 @@ public class Juego extends Canvas implements Escenario, KeyListener {
 	public void llamarJefeDemonioM() {
 		DemonioM BossDemonioM = new DemonioM(this);
 		// Crear instancia del poder con duración aleatoria
-		PoderDemonioMDebil poderDemonioMDebil = new PoderDemonioMDebil(this);
+		DemonioMDebil poderDemonioMDebil = new DemonioMDebil(this);
 
 		// Agregar el poder al jefe
 		BossDemonioM.setPoder(poderDemonioMDebil);
