@@ -4,13 +4,13 @@ import game.Escenario;
 import game.Poderes;
 import random.MiRandom;
 
-public class DemonioMFuerte extends Poderes implements CalcularDuracion {
+public class PoderDemonioMFuerte extends Poderes implements CalcularDuracion {
 
 	public static int DAMAGE = 200;
 	private MiRandom myRandom;
 	private static double probabilidadDuracion = 0.6; // Probabilidad de duración
 
-	public DemonioMFuerte(Escenario escenario) {
+	public PoderDemonioMFuerte(Escenario escenario) {
 		super(escenario);
 		myRandom = new MiRandom(System.currentTimeMillis());
 		setSpritesNombres(new String[]{"poderes/poderDemonioMFuerte0.png"});

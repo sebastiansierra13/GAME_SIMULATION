@@ -4,14 +4,14 @@ import personajes.Robot;
 import personajes.Alex;
 import personajes.AlexGod;
 import poderes.PoderDemonioDebil;
-import poderes.DemonioMDebil;
-import poderes.DemonioMFuerte;
+import poderes.PoderDemonioMDebil;
+import poderes.PoderDemonioMFuerte;
 import poderes.PoderRobot;
 import poderes.PoderAlexDebil;
 import poderes.PoderAlexGod;
-import poderes.GiganteDeHierroDebil;
-import poderes.SucuboDebil;
-import poderes.SucuboFuerte;
+import poderes.PoderGiganteDeHierroDebil;
+import poderes.PoderSucuboDebil;
+import poderes.PoderSucuboFuerte;
 import poderes.PoderUndead;
 
 import java.util.Random;
@@ -74,7 +74,7 @@ public abstract class Personajes extends Animado {
 		}
 	}
 
-	
+
 
 	/**
 	 * Chequea las colisiones para los enemigos
@@ -117,13 +117,13 @@ public abstract class Personajes extends Animado {
 			animado.remover();
 			addVitalidad(-PoderDemonioDebil.DAMAGE);
 
-		} else if (animado instanceof SucuboDebil) {
+		} else if (animado instanceof PoderSucuboDebil) {
 			animado.remover();
-			addVitalidad(-SucuboDebil.DAMAGE);
+			addVitalidad(-PoderSucuboDebil.DAMAGE);
 
-		} else if (animado instanceof SucuboFuerte) {
+		} else if (animado instanceof PoderSucuboFuerte) {
 			animado.remover();
-			addVitalidad(-SucuboFuerte.DAMAGE);
+			addVitalidad(-PoderSucuboFuerte.DAMAGE);
 
 		} else if (animado instanceof Demonio) {
 			addVitalidad(-Demonio.DAMAGE);
@@ -141,17 +141,17 @@ public abstract class Personajes extends Animado {
 		} else if (animado instanceof GigantedeHierro){
 			addVitalidad(-GigantedeHierro.DAMAGE);
 			
-		}else if (animado instanceof GiganteDeHierroDebil) {
+		}else if (animado instanceof PoderGiganteDeHierroDebil) {
 			animado.remover();
-			addVitalidad(-GiganteDeHierroDebil.DAMAGE);
+			addVitalidad(-PoderGiganteDeHierroDebil.DAMAGE);
 
-		} else if (animado instanceof DemonioMDebil) {
+		} else if (animado instanceof PoderDemonioMDebil) {
 			animado.remover();
-			addVitalidad(-DemonioMDebil.DAMAGE);
+			addVitalidad(-PoderDemonioMDebil.DAMAGE);
 
-		} else if (animado instanceof DemonioMFuerte) {
+		} else if (animado instanceof PoderDemonioMFuerte) {
 			animado.remover();
-			addVitalidad(-DemonioMFuerte.DAMAGE);
+			addVitalidad(-PoderDemonioMFuerte.DAMAGE);
 
 		}
 

@@ -26,9 +26,9 @@ import enemigos.DemonioM;
 import enemigos.GigantedeHierro;
 import enemigos.Sucubo;
 import enemigos.Undead;
-import poderes.DemonioMDebil;
-import poderes.GiganteDeHierroDebil;
-import poderes.SucuboFuerte;
+import poderes.PoderDemonioMDebil;
+import poderes.PoderGiganteDeHierroDebil;
+import poderes.PoderSucuboFuerte;
 import random.MiRandom;
 
 public class Juego extends Canvas implements Escenario, KeyListener {
@@ -506,7 +506,7 @@ public class Juego extends Canvas implements Escenario, KeyListener {
 	public void llamarJefBossSucubo() {
 		Sucubo BossSucubo = new Sucubo(this);
 		// Crear instancia del poder con duración aleatoria
-		SucuboFuerte poderSucuboFuerte = new SucuboFuerte(this);
+		PoderSucuboFuerte poderSucuboFuerte = new PoderSucuboFuerte(this);
 
 		// Agregar el poder al jefe
 		BossSucubo.setPoder(poderSucuboFuerte);
@@ -522,7 +522,7 @@ public class Juego extends Canvas implements Escenario, KeyListener {
 	public void llamarJefeGiganteDeHierro() {
 		GigantedeHierro BossGiganteDeHierro = new GigantedeHierro(this);
 		// Crear instancia del poder con duración aleatoria
-		GiganteDeHierroDebil poderGiganteDeHierroDebil = new GiganteDeHierroDebil(this);
+		PoderGiganteDeHierroDebil poderGiganteDeHierroDebil = new PoderGiganteDeHierroDebil(this);
 
 		// Agregar el poder al jefe
 		BossGiganteDeHierro.setPoder(poderGiganteDeHierroDebil);
@@ -537,7 +537,7 @@ public class Juego extends Canvas implements Escenario, KeyListener {
 	public void llamarJefeDemonioM() {
 		DemonioM BossDemonioM = new DemonioM(this);
 		// Crear instancia del poder con duración aleatoria
-		DemonioMDebil poderDemonioMDebil = new DemonioMDebil(this);
+		PoderDemonioMDebil poderDemonioMDebil = new PoderDemonioMDebil(this);
 
 		// Agregar el poder al jefe
 		BossDemonioM.setPoder(poderDemonioMDebil);

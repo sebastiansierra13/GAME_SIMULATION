@@ -3,8 +3,8 @@ package enemigos;
 import game.Animado;
 import game.Escenario;
 import game.Personajes;
-import poderes.DemonioMDebil;
-import poderes.DemonioMFuerte;
+import poderes.PoderDemonioMDebil;
+import poderes.PoderDemonioMFuerte;
 import poderes.PoderAlexFuerte;
 import random.MiRandom;
 
@@ -59,7 +59,7 @@ public class DemonioM extends Personajes{
 	
 	@Override
 	public void poderDebil() {
-		DemonioMDebil poder = new DemonioMDebil(escenario);
+		PoderDemonioMDebil poder = new PoderDemonioMDebil(escenario);
 		poder.setCoordenadaX(coordenadaX);
 		poder.setCoordenadaY(coordenadaY);
 		escenario.addAnimado(poder);
@@ -67,7 +67,7 @@ public class DemonioM extends Personajes{
 
 	@Override
 	public void poderFuerte() {
-		DemonioMFuerte poder = new DemonioMFuerte(escenario);
+		PoderDemonioMFuerte poder = new PoderDemonioMFuerte(escenario);
 		poder.setCoordenadaX(coordenadaX);
 		poder.setCoordenadaY(coordenadaY);
 		escenario.addAnimado(poder);

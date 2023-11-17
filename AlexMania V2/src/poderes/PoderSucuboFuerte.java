@@ -5,13 +5,13 @@ import game.Escenario;
 import game.Poderes;
 import random.MiRandom;
 
-public class SucuboFuerte extends Poderes implements CalcularDuracion {
+public class PoderSucuboFuerte extends Poderes implements CalcularDuracion {
 
 	public static int DAMAGE = 50;
 	private MiRandom myRandom;
 	private double probabilidadDuracion = 0.5; // Probabilidad de duración, ajusta según necesites
 
-	public SucuboFuerte(Escenario escenario) {
+	public PoderSucuboFuerte(Escenario escenario) {
 		super(escenario);
 		myRandom = new MiRandom(System.currentTimeMillis());
 		aplicarVariabilidadEnVelocidad();

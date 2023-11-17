@@ -4,13 +4,13 @@ import game.Escenario;
 import game.Poderes;
 import random.MiRandom;
 
-public class GiganteDeHierroDebil extends Poderes implements CalcularDuracion {
+public class PoderGiganteDeHierroDebil extends Poderes implements CalcularDuracion {
 
 	public static int DAMAGE = 70;
 	private MiRandom myRandom;
 	private double probabilidadDuracion = 0.7; // Probabilidad de duración, ajusta según necesites
 
-	public GiganteDeHierroDebil(Escenario escenario) {
+	public PoderGiganteDeHierroDebil(Escenario escenario) {
 		super(escenario);
 		myRandom = new MiRandom(System.currentTimeMillis());
 		setDuracion(calcularDuracion()); // Establecer la duración del poder
