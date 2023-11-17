@@ -4,7 +4,7 @@ import game.Escenario;
 import game.Poderes;
 import random.MiRandom;
 
-public class PoderSucuboDebil extends Poderes implements CalcularDuracion {
+public class PoderSucuboDebil extends Poderes implements CalcularDuracion{
 
 	public static int DAMAGE = 20;
 	private MiRandom myRandom;

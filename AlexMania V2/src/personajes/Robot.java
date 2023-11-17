@@ -3,7 +3,7 @@ package personajes;
 import game.Animado;
 import game.Escenario;
 import game.Personajes;
-import poderes.PoderUndead;
+import poderes.PoderRobot;
 import random.MiRandom;
 
 public class Robot extends Personajes {
@@ -30,26 +30,25 @@ public class Robot extends Personajes {
 		}
 
 	}
+	@Override
+	public void poderDebil() {
+		PoderRobot poder = new PoderRobot(escenario);
+		poder.setCoordenadaX(coordenadaX + getAncho());
+		poder.setCoordenadaY(coordenadaY);
+		escenario.addAnimado(poder);
+	}
 
 	@Override
+	public void poderFuerte() {
+		
+	}
+		@Override
 	public void colisiones(Animado animado) {
 		colisionesAliado(animado);
 		if (getVitalidad() <= 0)
 			remover();
 	}
-
-	@Override
-	public void poderDebil() {
-		PoderUndead poder = new PoderUndead(escenario);
-		poder.setCoordenadaX(coordenadaX + getAncho());
-		poder.setCoordenadaY(coordenadaY);
-		escenario.addAnimado(poder);
-	}
 	
-	@Override
-	public void poderFuerte() {
-		
-	}
 
 	@Override
 	public void addVitalidad(int v) {

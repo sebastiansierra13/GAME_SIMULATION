@@ -3,7 +3,7 @@ package poderes;
 import game.Escenario;
 import game.Poderes;
 
-public class PoderDemonioDebil extends Poderes {
+public class PoderDemonioDebil extends Poderes{
 
 	public static int DAMAGE = 5;
 

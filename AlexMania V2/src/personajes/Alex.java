@@ -27,6 +27,7 @@ public class Alex extends Personajes {
 	private int BOLA_DE_PODER = 1;
 	private int AYUDANTE_UNO = 0;
 	private int AYUDANTE_DOS = 0;
+	private boolean tomarCapsula = false;
 
 	public Alex(Escenario escenario) {
 		super(escenario);
@@ -142,6 +143,8 @@ public class Alex extends Personajes {
 
 		if (animado instanceof Capsula) {
 			animado.remover();
+			tomarCapsula = false;
+			System.out.println("CAPSULAAAAA");
 			escenario.getSonidoCache().playSonido("audio/toque.wav");
 			if (Capsula.BOLA_DE_PODER)
  				addBOLA_DE_PODER(1);
@@ -279,5 +282,13 @@ public class Alex extends Personajes {
 		if (restante > 0) {
 			AYUDANTE_DOS += gh;
 		}
+	}
+
+	public boolean getTomarCapsula(){
+		return tomarCapsula;
+	}
+
+	public void setTomarCapsula(Boolean estado){
+		tomarCapsula = estado;
 	}
 }

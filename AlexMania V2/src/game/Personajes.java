@@ -131,9 +131,6 @@ public abstract class Personajes extends Animado {
 		} else if (animado instanceof Sucubo) {
 			addVitalidad(-Sucubo.DAMAGE);
 
-		} else if (animado instanceof Robot) {
-			addVitalidad(-Robot.DAMAGE);
-
 		} else if (animado instanceof PoderUndead) {
 			animado.remover();
 			addVitalidad(-PoderUndead.DAMAGE);
