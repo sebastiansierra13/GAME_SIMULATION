@@ -7,7 +7,7 @@ import java.util.Random;
 import random.MiRandom;
 
 public class CadenaMarkov {
-    private Map<String, Map<String, Double>> transiciones;
+    private Map<String, Map<String, Double>> transiciones; //Clave String (estado origen), valor (otro mapa que asicia destino[clave], probabilidad[valor])double
     private Random random;
     private MiRandom myRandom;
 
@@ -36,6 +36,7 @@ public class CadenaMarkov {
     private void agregarTransicion(String estadoOrigen, String estadoDestino, double probabilidad) {
         transiciones.computeIfAbsent(estadoOrigen, k -> new HashMap<>());
         transiciones.get(estadoOrigen).put(estadoDestino, probabilidad);
+        //se agrega la probabilidad de transición al estado de destino en el mapa interno asociado al estado de origen.
     }
 
     public String siguienteEstado(String estadoActual) {
@@ -44,13 +45,12 @@ public class CadenaMarkov {
             throw new IllegalArgumentException("Estado no reconocido: " + estadoActual);
         }
         double miValorAleatorio = myRandom.nextDouble();
-        double valorAleatorio = random.nextDouble();
         double acumulado = 0;
 
         for (Map.Entry<String, Double> entry : probabilidades.entrySet()) {
             acumulado += entry.getValue();
             if (miValorAleatorio <= acumulado) {
-                return entry.getKey(); // Devuelve el estado destino
+                return entry.getKey(); // Devuelve el estado destino 
             }
         }
 
